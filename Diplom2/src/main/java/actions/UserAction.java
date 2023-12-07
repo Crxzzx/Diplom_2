@@ -7,7 +7,7 @@ import resources.User;
 
 import static io.restassured.RestAssured.given;
 
-public class UserAction extends BaseApi{
+public class UserAction extends BaseApi {
     public UserAction() {
     }
 

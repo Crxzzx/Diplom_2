@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
-public class OrderAction extends BaseApi{
+public class OrderAction extends BaseApi {
     public OrderAction() {
     }
 

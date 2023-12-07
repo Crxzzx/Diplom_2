@@ -1,14 +1,15 @@
 import base.BaseUser;
 import constants.ErrorMessagesAndSuccesses;
+import constants.UserFields;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Test;
 import resources.User;
-import constants.UserFields;
 
 import static org.apache.http.HttpStatus.*;
+
 public class ChangingUserDataTest extends BaseUser {
     @Test
     @DisplayName("Отправка GET запроса /api/auth/user для получения данных о пользователе")
@@ -33,6 +34,7 @@ public class ChangingUserDataTest extends BaseUser {
                 .statusCode(SC_OK);
         user.setPassword(password);
     }
+
     @Test
     @DisplayName("Отправка PATCH запроса /api/auth/user с использованием занятой почты")
     public void patchUserInfoEmailAlreadyUseTest() {
@@ -43,6 +45,7 @@ public class ChangingUserDataTest extends BaseUser {
                 .and().assertThat().body("message", Matchers.equalTo(ErrorMessagesAndSuccesses.EMAIL_ALREADY_USE))
                 .statusCode(SC_FORBIDDEN);
     }
+
     @Test
     @DisplayName("Отправка PATCH запроса /api/auth/user без авторизации")
     public void patchUserInfoNotTokenTest() {

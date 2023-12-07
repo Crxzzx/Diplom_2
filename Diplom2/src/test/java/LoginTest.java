@@ -1,12 +1,14 @@
 import base.BaseUser;
 import constants.ErrorMessagesAndSuccesses;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Test;
-import io.restassured.response.Response;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
+
 public class LoginTest extends BaseUser {
     @Test
     @DisplayName("Отправка корректного POST запроса /api/auth/login")

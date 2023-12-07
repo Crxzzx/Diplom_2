@@ -1,11 +1,12 @@
 import base.BaseOrder;
 import constants.ErrorMessagesAndSuccesses;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
-import io.restassured.response.Response;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_OK;
+
 public class GetIngredientsTest extends BaseOrder {
     @Test
     @DisplayName("Отправка GET запроса /api/ingredients для получения данных об ингредиентах")

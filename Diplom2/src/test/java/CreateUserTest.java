@@ -7,8 +7,8 @@ import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Test;
 
-
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_FORBIDDEN;
+import static org.apache.http.HttpStatus.SC_OK;
 
 public class CreateUserTest extends BaseUser {
     @Test
@@ -34,7 +34,7 @@ public class CreateUserTest extends BaseUser {
     @Test
     @DisplayName("Отправка POST запроса /api/auth/register без поля email")
     public void createUserEmailNullValueTest() {
-        generateCustomUserData(UserFields.PASSWORD , UserFields.NAME);
+        generateCustomUserData(UserFields.PASSWORD, UserFields.NAME);
         Response response = userAction.postRequestCreateUser(user);
         response.then().assertThat().body("success", Matchers.equalTo(ErrorMessagesAndSuccesses.NOT_SUCCESS))
                 .and().body("message", Matchers.equalTo(ErrorMessagesAndSuccesses.CREATE_WITHOUT_REQUIRED_FIELD))

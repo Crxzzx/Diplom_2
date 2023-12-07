@@ -1,12 +1,14 @@
 import base.BaseOrder;
 import constants.ErrorMessagesAndSuccesses;
-import org.hamcrest.Matchers;
-import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.hamcrest.Matchers;
 import org.junit.After;
+import org.junit.Test;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
+
 public class GetOrdersOfUserTest extends BaseOrder {
     @Test
     @DisplayName("Отправка корректного GET запроса /api/orders c авторизацией")

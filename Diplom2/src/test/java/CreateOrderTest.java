@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Test;
 
 import static org.apache.http.HttpStatus.*;
+
 public class CreateOrderTest extends BaseOrder {
     @Test
     @DisplayName("Отправка корректного POST запроса /api/orders c авторизацией")

@@ -11,6 +11,7 @@ import resources.Order;
 import resources.User;
 
 import static constants.OrderFields.INGREDIENTS_1;
+
 @Getter
 @Setter
 public class BaseOrder {
