@@ -53,7 +53,7 @@ public class CreateOrderTest extends BaseOrder {
     @After
     public void deleteUser() {
 
-        if (userAction.getUserToken(user) == null) {
+        if (userAction.getUserToken(user) != null) {
             userAction.deleteRequestRemoveUser(user);
         }
     }
